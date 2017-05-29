@@ -14,7 +14,7 @@ page = kajiki.XMLTemplate(u'''<html>
       </script>
       <script>
 ReactDOM.render(
-    React.createElement(HelloWorld.HelloWorld, { name: "World" }),
+    React.createElement(HelloWorld.HelloWorld, { name: "from master branch" }),
     document.getElementById('isomor')
 );
       </script>
@@ -34,7 +34,7 @@ class RootController(TGController):
 config = AppConfig(minimal=True, root_controller=RootController())
 config.renderers = ['kajiki']
 config.serve_static = True
-config.paths['static_files'] = 'statics'
+config.paths['static_files'] = '/app'
 
 from webassets.filter import register_filter
 from dukpy.webassets import BabelJSX
@@ -62,6 +62,7 @@ wa.plugme(
 application = config.make_wsgi_app()
 
 from wsgiref.simple_server import make_server
+print(__file__)
 print("Serving on port 8080...")
 httpd = make_server('', 8080, application)
 httpd.serve_forever()

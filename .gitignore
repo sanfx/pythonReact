@@ -1,1 +1,3 @@
-statics/.webassets-cache
+app/assets
+.*
+!/.gitignore

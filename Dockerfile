@@ -6,11 +6,11 @@ RUN apt-get update && \
 	apt-get -y install nano && \
 	    rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /statics/js
+RUN mkdir -p /app/js
 
-VOLUME ["/statics/"]
+VOLUME ["/app/"]
 
-WORKDIR /statics/js
+WORKDIR /app/js
 
 COPY requirements.txt /opt/requirements.txt
 
@@ -18,5 +18,5 @@ RUN pip install -r /opt/requirements.txt
 
 EXPOSE 8080
 
-CMD ["python", "/statics/js/app.py"]
+CMD ["python", "/app/app.py"]
 
