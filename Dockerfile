@@ -1,5 +1,7 @@
 FROM python:3.5-slim
 
+MAINTAINER Sanjeev Kumar <asksan@live.ca>
+
 RUN apt-get update && \
     apt-get -y install gcc mono-mcs && \
 	apt-get -y install vim && \
