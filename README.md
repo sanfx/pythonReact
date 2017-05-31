@@ -1,0 +1,17 @@
+# python React container
+pythonReactContainer is a docker based container that lets you deploy python based react component rendering web apps.
+
+Steps before you run the container:
+
+* Create a app folder in this container repository.
+* put the python `app.py` module in this fodler that should be the main module running httpServer.
+
+The app folder gets mounted to Container while you run.
+
+Command
+=======
+`docker run  -v absolute/path/to/app/:/app/  -p 8080:8080 -it pyApp`
+
+if you modify anything in the Dockerfile, do not forget to rebuild it.
+
+`docker build . -t pyapp`
