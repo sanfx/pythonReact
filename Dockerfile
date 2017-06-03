@@ -12,7 +12,7 @@ RUN mkdir -p /app/js
 
 VOLUME ["/app/"]
 
-WORKDIR /app/js
+WORKDIR /app
 
 COPY requirements.txt /opt/requirements.txt
 

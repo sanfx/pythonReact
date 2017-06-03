@@ -3,6 +3,7 @@ pythonReactContainer container that lets you deploy python based react component
 
 Steps before you run the container:
 
+* cd to project folder, I recommend you create app folder based on which will contain python app.
 * Create an app folder in this container repository.
 * put the python `app.py` module in this folder that should be the main module running httpServer.
 
