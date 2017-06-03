@@ -1,5 +1,8 @@
 FROM resin/rpi-raspbian:wheezy
 
+
+MAINTAINER Dieter Reuter <dieter@hypriot.com>
+
 RUN apt-get update && \
 	apt-get -y install python-pip && \
 	apt-get -y install python-dev && \
