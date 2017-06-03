@@ -1,4 +1,4 @@
-FROM python:3.5-slim
+FROM python:3.4-slim
 
 MAINTAINER Sanjeev Kumar <asksan@live.ca>
 
@@ -12,7 +12,7 @@ RUN mkdir -p /app/js
 
 VOLUME ["/app/"]
 
-WORKDIR /app/js
+WORKDIR /app
 
 COPY requirements.txt /opt/requirements.txt
 
