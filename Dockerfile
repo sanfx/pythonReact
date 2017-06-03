@@ -1,7 +1,10 @@
-FROM python:3.5-slim
+FROM resin/rpi-raspbian:wheezy
 
 RUN apt-get update && \
-    apt-get -y install gcc mono-mcs && \
+	apt-get -y install python-pip && \
+	apt-get -y install python-dev && \
+	apt-get -y install build-essential && \
+    	apt-get -y install gcc mono-mcs && \
 	apt-get -y install vim && \
 	apt-get -y install nano && \
 	    rm -rf /var/lib/apt/lists/*
