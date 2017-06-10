@@ -2,17 +2,23 @@ FROM python:2.7-slim
 
 MAINTAINER Sanjeev Kumar <asksan@live.ca>
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get update && \
     apt-get -y install gcc mono-mcs && \
-	apt-get -y install vim && \
-	apt-get -y install nano && \
 	    rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /app/js
 
+WORKDIR /app/js
+
+CMD [curl", "-o", "https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"]
+
 VOLUME ["/app/"]
 
 WORKDIR /app
+
+COPY /Users/sanjeevkumar/.vim /app/
 
 COPY requirements.txt /opt/requirements.txt
 
